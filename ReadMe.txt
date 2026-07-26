@@ -1,3 +1,21 @@
+<!-- wowup-repackaging-note -->
+> [!NOTE]
+> This repository is an unofficial repackaging of the original CurseForge addon,
+> maintained to make installation and update management available through WowUp.
+>
+> I am not the original author and do not claim ownership of the addon. Credit and
+> ownership remain with the original author and other contributors.
+>
+> Original project: <https://www.curseforge.com/wow/addons/gtfo>
+>
+> If you are the original author or current maintainer and would like this
+> repository removed or made private, please contact me through GitHub. I will
+> honor the request.
+
+---
+
+## Original README
+
 ====
 GTFO
 ====
@@ -2408,3 +2426,8 @@ Change Log:
 * Added Midnight spells for The Voidspire
 * Added Midnight spells for Nexus-Point Xenas
 * Added Legion spells for Seat of the Triumvirate
+
+6.6.2
+* Updated TOC for Classic 1.15.9
+* Updated TOC for TBC 2.5.6
+* Updated TOC for Mists 5.5.4
