@@ -642,17 +642,63 @@ GTFO.SpellID["278789"] = {
   sound = 1;
 };
 
--- ************************
--- * Temple of Sethraliss *
--- ************************
+-- *******************************
+-- * Temple of Sethraliss (1877) *
+-- *******************************
 
 GTFO.SpellID["272696"] = {
   --desc = "Oil of Immolation (Crazed Incubator)";
+  instance = 1877;
   sound = 1;
 };
 
 GTFO.SpellID["263927"] = {
   --desc = "Toxic Pool (Merektha)";
+  instance = 1877;
+  sound = 1;
+};
+
+GTFO.SpellID["1288885"] = {
+	--desc = "Tempest Winds (Aspix)";
+	sound = 1;
+	encounter = 2124;
+};
+
+GTFO.SpellID["1293133"] = {
+  --desc = "Lingering Storm (Lightning Serpent)";
+  instance = 1877;
+  encounter = 2125;
+  sound = 1;
+};
+
+GTFO.SpellID["1297034"] = {
+  --desc = "Electrified Ground (Merektha)";
+  instance = 1877;
+  encounter = 2125;
+  sound = 1;
+};
+
+GTFO.SpellID["1291815"] = {
+  --desc = "Induction Field (Galvazzt)";
+  instance = 1877;
+  encounter = 2126;
+  sound = 1;
+};
+
+GTFO.SpellID["266923"] = {
+  --desc = "Galvanized (Lightning Spire)";
+  instance = 1877;
+  encounter = 2126;
+  sound = 0;
+  tankSound = 1;
+  stackSound = 0;
+  tankStackSound = 1;
+};
+
+GTFO.SpellID["1300684"] = {
+  --desc = "Hex Muck (Twisted Hexxer)";
+  instance = 1877;
+  encounter = 2127;
   sound = 1;
 };
 

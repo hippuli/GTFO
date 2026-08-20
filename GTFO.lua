@@ -29,9 +29,9 @@ GTFO = {
 		IgnoreTimeAmount = .2;
 		AFKAlertMode = nil;
 	};
-	Version = "6.7"; -- Version number (text format)
+	Version = "6.8"; -- Version number (text format)
 	VersionNumber = 0; -- Numeric version number for checking out-of-date clients (placeholder until client is detected)
-	RetailVersionNumber = 60700; -- Numeric version number for checking out-of-date clients (retail)
+	RetailVersionNumber = 60800; -- Numeric version number for checking out-of-date clients (retail)
 	ClassicVersionNumber = 60602; -- Numeric version number for checking out-of-date clients (Vanilla classic)
 	BurningCrusadeVersionNumber = 60602; -- Numeric version number for checking out-of-date clients (TBC classic)
 	WrathVersionNumber = 60602; -- Numeric version number for checking out-of-date clients (Wrath classic)
@@ -468,6 +468,11 @@ function GTFO_Command_TestMode()
 end
 
 function GTFO_Command_Standby()
+	if (GTFO.RetailMode and GTFO.IsAuraSoundRegistrationRestricted and GTFO.IsAuraSoundRegistrationRestricted()) then
+		GTFO_ErrorPrint(GTFOLocal.Help_SettingsDuringRestrictions);
+		return;
+	end
+
 	if (GTFO.Settings.Active) then
 		GTFO.Settings.Active = nil;
 		GTFO_ChatPrint(GTFOLocal.Active_Off);

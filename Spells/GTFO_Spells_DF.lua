@@ -366,6 +366,7 @@ GTFO.SpellID["408173"] = {
 GTFO.SpellID["392365"] = {
   --desc = "Fissuring Slam (Dreadful Defender)";
   sound = 1;
+  maps = { 2133, 2633 }; -- Zaralek Cavern, The Ring of Glory
 };
 
 GTFO.SpellID["403384"] = {
@@ -606,10 +607,15 @@ GTFO.SpellID["372963"] = {
 
 GTFO.SpellID["397077"] = {
   --desc = "Chillstorm (Melidrussa Chillworn)";
+  sound = 1;
+  affirmingDebuffSpellID = 372963; -- Chillstorm inner circle
+};
+
+GTFO.SpellID["372963"] = {
+  --desc = "Storm's Eye (Melidrussa Chillworn)";
   instance = 2521;
   encounter = 2609;
   sound = 1;
-  affirmingDebuffSpellID = 372963; -- Chillstorm inner circle
 };
 
 GTFO.SpellID["374927"] = {
@@ -670,6 +676,13 @@ GTFO.SpellID["373973"] = {
 GTFO.SpellID["372820"] = {
   --desc = "Scorched Earth (Blazebound Firestorm)";
   instance = 2521;
+  sound = 1;
+};
+
+GTFO.SpellID["372820"] = {
+  --desc = "Fiery Demise (Kokia Blazehoof)";
+  instance = 2521;
+  encounter = 2606;
   sound = 1;
 };
 

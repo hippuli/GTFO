@@ -43,12 +43,125 @@ GTFO.SpellID["1266183"] = {
   sound = 3;
 };
 
-GTFO.SpellID["3903961"] = {
-  --desc = "Lightning Crash (The Hundred Thunders)";
+GTFO.SpellID["1258640"] = {
+  --desc = "Rigor Mortis (Vilebranch Souleater)";
+  applicationOnly = true;
   map = 2437; -- Zul'Aman
+  sound = 3;
+};
+
+GTFO.SpellID["1230634"] = {
+  --desc = "Crushing Stomp (Hal'hadar Automaton)";
+  applicationOnly = true;
+  map = 2437; -- Zul'Aman
+  sound = 3;
+};
+
+GTFO.SpellID["1235134"] = {
+  --desc = "Erupting Roots (Cragpine)";
+  map = 2437; -- Zul'Aman
+  sound = 3;
+};
+
+GTFO.SpellID["1285974"] = {
+  --desc = "Deadly Slam (Strongblood Jak'mo)";
+  applicationOnly = true;
+  map = 2437; -- Zul'Aman
+  sound = 3;
+};
+
+GTFO.SpellID["1291560"] = {
+  --desc = "Stunned (Spiritwing)";
+  map = 2512; -- The Coiled Isle
+  sound = 3;
+  applicationOnly = true;
+};
+
+GTFO.SpellID["1285909"] = {
+  --desc = "Smooshed";
+  map = 2512; -- The Coiled Isle
   applicationOnly = true;
   sound = 3;
 };
+
+
+
+--- *******************
+--- * Midnight (Prey) *
+--- *******************
+
+
+
+--- *********************
+--- * Midnight (Delves) *
+--- *********************
+
+GTFO.SpellID["1287559"] = {
+	--desc = "Muckwave (Stonerender Raider)";
+	instance = 3038; -- Gnarldor Isle
+	sound = 3;
+};
+
+GTFO.SpellID["1238255"] = {
+	--desc = "Whirling Spirit (Stonesoul Specter)";
+	instance = 3077; -- The Ring of Glory
+	sound = 3;
+};
+
+GTFO.SpellID["392013"] = {
+	--desc = "Golem Smash (Ancient Golem)";
+	instance = 3077; -- The Ring of Glory
+	applicationOnly = true;
+	sound = 3;
+};
+
+GTFO.SpellID["1239757"] = {
+	--desc = "Soul Impale (Restless Spiritcaller)";
+	instance = 3077; -- The Ring of Glory
+	sound = 3;
+};
+
+GTFO.SpellID["1296414"] = {
+	--desc = "Thrusting Spear";
+	instance = 3077; -- The Ring of Glory
+	applicationOnly = true;
+	sound = 3;
+};
+
+GTFO.SpellID["1296441"] = {
+	--desc = "Hex Pile";
+	instance = 3077; -- The Ring of Glory
+	applicationOnly = true;
+	sound = 3;
+};
+
+GTFO.SpellID["1296366"] = {
+	--desc = "Scything Blade";
+	instance = 3077; -- The Ring of Glory
+	sound = 3;
+};
+
+GTFO.SpellID["1291555"] = {
+	--desc = "Noxious Bile (Azta'rec)";
+	instance = 3079; -- Venomfall Deeps
+	sound = 3;
+	applicationOnly = true;
+};
+
+GTFO.SpellID["1309412"] = {
+	--desc = "Venom Wave (Azta'rec)";
+	instance = 3079; -- Venomfall Deeps
+	sound = 3;
+};
+
+GTFO.SpellID["1288126"] = {
+	--desc = "Wrath of Ula'tek (Azta'rec)";
+	instance = 3079; -- Venomfall Deeps
+	sound = 3;
+};
+
+
+
 
 --- ************************
 --- * The Voidspire (2912) *
@@ -326,6 +439,21 @@ GTFO.SpellID["1258668"] = {
   sound = 3;
 };
 
+GTFO.SpellID["1307062"] = {
+  --desc = "Big Wave (Tidebound Brute)";
+  applicationOnly = true;
+  instance = 2987;
+  sound = 3;
+};
+
+GTFO.SpellID["1313448"] = {
+  --desc = "Frost Orb (Nymrissa Wavecaller)";
+  applicationOnly = true;
+  instance = 2987;
+  sound = 3;
+};
+
+
 --- *****************************
 --- * The Venomous Abyss (3004) *
 --- *****************************
@@ -358,19 +486,299 @@ GTFO.SpellID["??????"] = {
 };
 ]]--
 
---[[
-TODO: Review combat logs to find the correct spell ID and verify whether any
-intended intermission assignment requires players to remain outside Hungering
-Pyre before enabling this alert.
-
-GTFO.SpellID["??????"] = {
+GTFO.SpellID["1294933"] = {
   --desc = "Slithering Flame (Echo of Jawae)";
   instance = 3004;
   encounter = 3470;
+  sound = 3;
   applicationOnly = true;
+};
+
+GTFO.SpellID["1284947"] = {
+  --desc = "Cultivated Burst";
+  instance = 3004;
+  encounter = 3445;
+  sound = 3;
+  applicationOnly = true;
+};
+
+--[[
+TODO: Review combat logs for the player damage event caused by Living Venom.
+
+GTFO.SpellID["??????"] = {
+  --desc = "Living Venom";
+  instance = 3004;
+  encounter = 3445;
   sound = 3;
 };
 ]]--
+
+--[[
+TODO: Review combat logs for the player damage event caused by Protovenom Eruption.
+
+GTFO.SpellID["??????"] = {
+  --desc = "Protovenom Eruption";
+  instance = 3004;
+  encounter = 3445;
+  sound = 3;
+};
+]]--
+
+
+
+--- *********************
+--- * Murder Row (2813) *
+--- *********************
+
+GTFO.SpellID["1223906"] = {
+  --desc = "Fel Nova (Kystia Manaheart)";
+  instance = 2813;
+  encounter = 3101;
+  sound = 3;
+};
+
+GTFO.SpellID["474740"] = {
+  --desc = "Murder in a Row (Zaen Bladesorrow)";
+  instance = 2813;
+  encounter = 3102;
+  applicationOnly = true;
+  sound = 3;
+};
+
+GTFO.SpellID["474768"] = {
+  --desc = "Delivery! (Zaen Bladesorrow)";
+  instance = 2813;
+  encounter = 3102;
+  sound = 3;
+};
+
+GTFO.SpellID["1266241"] = {
+  --desc = "Freight Explosion (Forbidden Freight)";
+  instance = 2813;
+  encounter = 3102;
+  sound = 3;
+};
+
+GTFO.SpellID["473898"] = {
+  --desc = "Legion Strike (Xathuux the Annihilator)";
+  instance = 2813;
+  encounter = 3103;
+  applicationOnly = true;
+  sound = 3;
+  tankSound = 0;
+};
+
+GTFO.SpellID["1214663"] = {
+  --desc = "Axe Toss (Xathuux the Annihilator)";
+  instance = 2813;
+  encounter = 3103;
+  sound = 3;
+};
+
+GTFO.SpellID["1217384"] = {
+  --desc = "Malefic Wave (Lithiel Cinderfury)";
+  instance = 2813;
+  encounter = 3105;
+  applicationOnly = true;
+  sound = 3;
+  stackSound = 3;
+};
+
+GTFO.SpellID["1297691"] = {
+  --desc = "Whirlwind (Shivan Punisher)";
+  instance = 2813;
+  sound = 3;
+};
+
+GTFO.SpellID["1297695"] = {
+  --desc = "Felfire Bombardment (Fel Invoker)";
+  instance = 2813;
+  sound = 3;
+};
+
+GTFO.SpellID["1294836"] = {
+  --desc = "Defiled Detonation (Defiled Golem)";
+  instance = 2813;
+  sound = 3;
+};
+
+--- *************************
+--- * Voidscar Arena (2923) *
+--- *************************
+
+GTFO.SpellID["1299145"] = {
+	--desc = "Earthsplitter (Aegyra the Unyielding)";
+	instance = 2923;
+	sound = 3;
+};
+
+GTFO.SpellID["1311712"] = {
+	--desc = "Lightning Strike (Raj'kess the Spellstorm)";
+	instance = 2923;
+	sound = 3;
+};
+
+GTFO.SpellID["1234917"] = {
+	--desc = "Smashing Charge (Bruttok)";
+	instance = 2923;
+	sound = 3;
+};
+
+GTFO.SpellID["1296963"] = {
+	--desc = "Umbral Rupture (Taz'Rah)";
+	instance = 2923;
+	sound = 3;
+};
+
+GTFO.SpellID["1300262"] = {
+	--desc = "Dark Bloom (Taz'Rah)";
+	instance = 2923;
+	sound = 3;
+};
+
+GTFO.SpellID["1233264"] = {
+	--desc = "Blisterburst (Blistercreep)";
+	instance = 2923;
+	sound = 3;
+};
+
+GTFO.SpellID["1226031"] = {
+	--desc = "Poison Splash (Atroxus)";
+	instance = 2923;
+	encounter = 3286;
+	sound = 3;
+	applicationOnly = true;
+};
+
+GTFO.SpellID["1222724"] = {
+	--desc = "Noxious Breath (Atroxus)";
+	instance = 2923;
+	encounter = 3286;
+	sound = 3;
+};
+
+GTFO.SpellID["1282892"] = {
+	--desc = "Sickening Bite (Toxic Creeper)";
+	instance = 2923;
+	encounter = 3286;
+	sound = 1;
+	stackSound = 1;
+};
+
+GTFO.SpellID["1310026"] = {
+	--desc = "Atomized (Charonus)";
+	instance = 2923;
+	encounter = 3287;
+	sound = 3;
+	applicationOnly = true;
+};
+
+--- ****************************
+--- * The Blinding Vale (2859) *
+--- ****************************
+
+GTFO.SpellID["1238638"] = {
+	--desc = "Bullet Seeds (Overgrown Hydra)";
+	instance = 2859;
+	sound = 3;
+};
+
+GTFO.SpellID["1263642"] = {
+	--desc = "Belch Spores (Sporeblight Belcher)";
+	instance = 2859;
+	sound = 3;
+};
+
+GTFO.SpellID["1237267"] = {
+	--desc = "Incise (Ikuzz the Light Hunter)";
+	instance = 2859;
+	encounter = 3200;
+	sound = 3;
+	applicationOnly = true;
+};
+
+
+GTFO.SpellID["1242138"] = {
+	--desc = "Solar Breath (Luminous Thornmaw)";
+	instance = 2859;
+	sound = 3;
+};
+
+GTFO.SpellID["1239919"] = {
+	--desc = "Lightfire Beams (Lightwarden Ruia)";
+	instance = 2859;
+	encounter = 3201;
+	sound = 3;
+  applicationOnly = true;
+};
+
+GTFO.SpellID["1242200"] = {
+	--desc = "Lightwarden's Blight (Spineshield Beetle)";
+	instance = 2859;
+	sound = 3;
+};
+
+--- **************************
+--- * Den of Nalorakk (2825) *
+--- **************************
+
+GTFO.SpellID["1234021"] = {
+	--desc = "Earthshatter Slam (The Hoardmonger)";
+	instance = 2825;
+	encounter = 3207;
+	sound = 3;
+};
+
+GTFO.SpellID["1235129"] = {
+	--desc = "Bonespike Slam (The Hoardmonger)";
+	instance = 2825;
+	encounter = 3207;
+	sound = 3;
+};
+
+GTFO.SpellID["1240280"] = {
+	--desc = "Pulverize (Avatar of Determination)";
+	instance = 2825;
+	sound = 3;
+  applicationOnly = true;
+};
+
+GTFO.SpellID["1235795"] = {
+	--desc = "Shattering Frostspike (Sentinel of Winter)";
+	instance = 2825;
+	encounter = 3208;
+	sound = 3;
+};
+
+GTFO.SpellID["1235641"] = {
+	--desc = "Raging Squall (Sentinel of Winter)";
+	instance = 2825;
+	encounter = 3208;
+	sound = 3;
+};
+
+GTFO.SpellID["1247030"] = {
+	--desc = "Poison Spear Volley (Grizzled Warbringer)";
+	instance = 2825;
+	sound = 3;
+};
+
+GTFO.SpellID["1242887"] = {
+	--desc = "Echoing Maul (Nalorakk)";
+	instance = 2825;
+	encounter = 3209;
+	sound = 3;
+};
+
+GTFO.SpellID["1297797"] = {
+	--desc = "Forceful Slam (Nalorakk)";
+	instance = 2825;
+	encounter = 3209;
+	sound = 3;
+	tankSound = 0;
+};
+
+
 
 end
 

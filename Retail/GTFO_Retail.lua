@@ -15,6 +15,14 @@ GTFO.AuraSoundTrigger = C_UnitAuras.AddAuraSound and {
 	ApplicationsIncreased = Enum.UnitAuraSoundTrigger.ApplicationsIncreased,
 } or nil;
 
+local AuraSoundRestrictionTypes = {
+	{ Enum.AddOnRestrictionType.Combat, "Combat" },
+	{ Enum.AddOnRestrictionType.Encounter, "Encounter" },
+	{ Enum.AddOnRestrictionType.ChallengeMode, "ChallengeMode" },
+	{ Enum.AddOnRestrictionType.PvPMatch, "PvPMatch" },
+	{ Enum.AddOnRestrictionType.Map, "Map" },
+};
+
 function GTFO_OnEvent(self, event, ...)
 	if (event == "VARIABLES_LOADED") then
 		C_ChatInfo.RegisterAddonMessagePrefix("GTFO");
@@ -121,6 +129,7 @@ function GTFO_OnEvent(self, event, ...)
 	end
 	if (event == "ZONE_CHANGED" or event == "ZONE_CHANGED_INDOORS" or event == "ZONE_CHANGED_NEW_AREA") then
 		GTFO.RefreshRegisteredMapSounds();
+		GTFO.RefreshRegisteredInstanceSounds();
 		return;
 	end
 	if (event == "PLAYER_STARTED_MOVING") then
@@ -128,6 +137,10 @@ function GTFO_OnEvent(self, event, ...)
 		return;
 	end
 	if (event == "PLAYER_FLAGS_CHANGED") then
+		GTFO.HandleAFKAlert(event, ...);
+		return;
+	end
+	if (event == "PLAYER_REGEN_ENABLED") then
 		GTFO.HandleAFKAlert(event, ...);
 		return;
 	end
@@ -278,40 +291,60 @@ function GTFO_OnEvent(self, event, ...)
 		GTFO.TryUnregisterEncounter();		
 		return;
 	end
-	if (event == "PLAYER_REGEN_ENABLED") then
-		if (GTFO.PendingEncounterUnregister) then
-			GTFO.TryUnregisterEncounter();
+	if (event == "ADDON_RESTRICTION_STATE_CHANGED") then
+		local restrictionType, restrictionState = ...;
+
+		if (restrictionState == Enum.AddOnRestrictionState.Inactive and not GTFO.IsAuraSoundRegistrationRestricted()) then
+			if (GTFO.PendingEncounterUnregister) then
+				GTFO.TryUnregisterEncounter();
+			end
+			if (GTFO.PendingSoundRefresh) then
+				GTFO.PendingSoundRefresh = nil;
+				GTFO.PendingMapRefresh = nil;
+				GTFO.RefreshRegisteredSounds();
+			elseif (GTFO.PendingMapRefresh) then
+				GTFO.PendingMapRefresh = nil;
+				GTFO.RefreshRegisteredMapSounds();
+			end
 		end
-		if (GTFO.PendingMapRefresh) then
-			GTFO.PendingMapRefresh = nil;
-			GTFO.RefreshRegisteredMapSounds();
-		end
-		if (GTFO.PendingSoundRefresh) then
-			GTFO.PendingSoundRefresh = nil;
-			GTFO.RefreshRegisteredSounds();
-		end
-		GTFO.HandleAFKAlert(event, ...);
 		return;
 	end
+end
+
+function GTFO.IsAuraSoundRegistrationRestricted()
+	local inactive = Enum.AddOnRestrictionState.Inactive;
+	local isRestricted = false;
+	local restricted;
+
+	for _, restriction in ipairs(AuraSoundRestrictionTypes) do
+		if (C_RestrictedActions.GetAddOnRestrictionState(restriction[1]) ~= inactive) then
+			isRestricted = true;
+
+			if (GTFO.Settings.DebugMode) then
+				restricted = restricted or { };
+				table.insert(restricted, restriction[2]);
+			end
+		end
+	end
+
+	if (restricted) then
+		GTFO_DebugPrint("Addon restrictions active: "..table.concat(restricted, ", "));
+	end
+
+	return isRestricted;
 end
 
 -- Refresh currently registered instance/encounter/map aura sounds
 function GTFO.RefreshRegisteredSounds()
-	if (InCombatLockdown()) then
+	if (GTFO.IsAuraSoundRegistrationRestricted()) then
 		GTFO.PendingSoundRefresh = true;
 		return;
 	end
-	if (GTFO.Settings.Active) then
-		GTFO_ActivateMod();
-	end
+	GTFO.PendingSoundRefresh = nil;
+	GTFO_ActivateMod();
 end
 
 function GTFO.RefreshRegisteredMapSounds()
-	if (InCombatLockdown()) then
-		GTFO.PendingMapRefresh = true;
-		return;
-	end
-
 	if (not GTFO.Settings.Active) then
 		return;
 	end
@@ -321,8 +354,33 @@ function GTFO.RefreshRegisteredMapSounds()
 		return;
 	end
 
+	if (GTFO.IsAuraSoundRegistrationRestricted()) then
+		GTFO.PendingMapRefresh = true;
+		return;
+	end
+
 	GTFO.UnregisterMap();
 	GTFO.RegisterMap();
+end
+
+function GTFO.RefreshRegisteredInstanceSounds()
+	if (not GTFO.Settings.Active) then
+		return;
+	end
+
+	local _, _, _, _, _, _, _, currentInstanceId = GetInstanceInfo();
+	currentInstanceId = currentInstanceId or 0;
+	if (currentInstanceId == GTFO.CurrentInstanceId) then
+		return;
+	end
+
+	if (GTFO.IsAuraSoundRegistrationRestricted()) then
+		GTFO.PendingSoundRefresh = true;
+		return;
+	end
+
+	GTFO.UnregisterInstance();
+	GTFO.RegisterInstance();
 end
 
 function GTFO.SafeUnitIsUnit(unit1, unit2)
@@ -409,7 +467,8 @@ function GTFO.RegisterEncounter(encounterId)
 		GTFO_DebugPrint("Register for encounter "..GTFO.CurrentEncounterId);
 		local spells = GTFO.EncounterIndex[GTFO.CurrentEncounterId];
 		if (spells and #spells > 0) then
-			if (InCombatLockdown()) then
+			if (GTFO.IsAuraSoundRegistrationRestricted()) then
+				-- Encounter is blocked, since you're probably in combat now, no point in retrying
 				GTFO_ChatPrint(GTFOLocal.Help_EncounterRegistrationBlocked);
 				return;
 			end
@@ -420,7 +479,8 @@ function GTFO.RegisterEncounter(encounterId)
 end
 
 function GTFO.TryUnregisterEncounter()
-	if (InCombatLockdown()) then
+	if (GTFO.IsAuraSoundRegistrationRestricted()) then
+		GTFO.PendingEncounterUnregister = true;
 		return;
 	end
 
@@ -439,6 +499,8 @@ end
 
 function GTFO.RegisterInstance()
 	local name, instanceType, difficultyID, difficultyName, maxPlayers, dynamicDifficulty, isDynamic, instanceID, instanceGroupSize, LfgDungeonID = GetInstanceInfo();
+	GTFO.CurrentInstanceId = instanceID or 0;
+
 	if (instanceID) then
 		GTFO_DebugPrint("Register for instance "..tostring(instanceID));
 		local spells = GTFO.InstanceIndex[instanceID];
@@ -455,6 +517,7 @@ function GTFO.UnregisterInstance()
 		--GTFO_DebugPrint(tostring(GTFO.InstanceRegistration.SoundIds)..": Unregistering instance aura sound");
 	end
 	GTFO.InstanceRegistration = { SoundIds = { }, SpellIds = { } };
+	GTFO.CurrentInstanceId = nil;
 	return;
 end
 
@@ -682,6 +745,7 @@ function GTFO_OnLoad()
 	GTFOFrame:RegisterEvent("ZONE_CHANGED_INDOORS");
 	GTFOFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA");
 	GTFOFrame:RegisterEvent("PLAYER_REGEN_ENABLED");
+	GTFOFrame:RegisterEvent("ADDON_RESTRICTION_STATE_CHANGED");
 	SlashCmdList["GTFO"] = GTFO_Command;
 	SLASH_GTFO1 = "/GTFO";
 end
@@ -1504,21 +1568,6 @@ function GTFO.BuildIndexes()
 				end
 				GTFO.AddUnique(GTFO.InstanceIndex[instanceId], spellId);
 				counter = counter + 1;
-			elseif (data.encounters and #data.encounters > 0) then
-				for i, encounterId in pairs(data.encounters) do
-					if (not GTFO.EncounterIndex[encounterId]) then
-						GTFO.EncounterIndex[encounterId] = { };
-					end
-					GTFO.AddUnique(GTFO.EncounterIndex[encounterId], spellId);
-					counter = counter + 1;
-				end
-			elseif (data.encounter) then
-				local encounterId = tonumber(data.encounter);
-				if (not GTFO.EncounterIndex[encounterId]) then
-					GTFO.EncounterIndex[encounterId] = { };
-				end
-				GTFO.AddUnique(GTFO.EncounterIndex[encounterId], spellId);
-				counter = counter + 1;
 			elseif (data.maps and #data.maps > 0) then
 				for i, mapId in pairs(data.maps) do
 					mapId = tonumber(mapId);
@@ -1539,6 +1588,21 @@ function GTFO.BuildIndexes()
 					GTFO.AddUnique(GTFO.MapIndex[mapId], spellId);
 					counter = counter + 1;
 				end
+			elseif (data.encounters and #data.encounters > 0) then
+				for i, encounterId in pairs(data.encounters) do
+					if (not GTFO.EncounterIndex[encounterId]) then
+						GTFO.EncounterIndex[encounterId] = { };
+					end
+					GTFO.AddUnique(GTFO.EncounterIndex[encounterId], spellId);
+					counter = counter + 1;
+				end
+			elseif (data.encounter) then
+				local encounterId = tonumber(data.encounter);
+				if (not GTFO.EncounterIndex[encounterId]) then
+					GTFO.EncounterIndex[encounterId] = { };
+				end
+				GTFO.AddUnique(GTFO.EncounterIndex[encounterId], spellId);
+				counter = counter + 1;
 			end
 		else
 			if (not GTFO.Settings.ScanMode) then

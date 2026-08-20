@@ -42,6 +42,49 @@ GTFO.SpellID["1295990"] = {
   sound = 1;
 };
 
+GTFO.SpellID["1270524"] = {
+  --desc = "Alchemical Sludge (Ash'an the Empowered)";
+  map = 2437; -- Zul'Aman
+  sound = 1;
+};
+
+GTFO.SpellID["1276517"] = {
+  --desc = "Ancient Seeds (Cragpine)";
+  map = 2437; -- Zul'Aman
+  sound = 1;
+};
+
+GTFO.SpellID["1297422"] = {
+  desc = "Deadly Venom (Environment)";
+  maps = { 2512, 2588 }; -- The Coiled Isle, Altar of Fangs
+  sound = 1;
+};
+
+GTFO.SpellID["1298887"] = {
+	--desc = "Noxious Venom (Azta'rec)";
+	instance = 3079; -- Venomfall Deeps
+	sound = 1;
+};
+
+GTFO.SpellID["1285733"] = {
+  --desc = "Brambles";
+  map = 2512; -- The Coiled Isle
+  sound = 2;
+};
+
+GTFO.SpellID["1285145"] = {
+  --desc = "Water Hazard";
+  map = 2512; -- The Coiled Isle
+  sound = 2;
+};
+
+GTFO.SpellID["1285890"] = {
+  --desc = "Return To The Track!";
+  map = 2512; -- The Coiled Isle
+  sound = 1;
+};
+
+
 
 --- *******************
 --- * Midnight (Prey) *
@@ -59,6 +102,29 @@ GTFO.SpellID["1256357"] = {
   sound = 1;
 };
 
+--- *********************
+--- * Midnight (Delves) *
+--- *********************
+
+GTFO.SpellID["1287680"] = {
+	--desc = "Snake Eater (Graka Snake-Eater)";
+	instance = 3038; -- Gnarldor Isle
+	encounter = 3512;
+	sound = 1;
+};
+
+GTFO.SpellID["1301863"] = {
+	--desc = "Spirit Tear (Drakta)";
+	instance = 3077; -- The Ring of Glory
+	encounter = 3535;
+	sound = 1;
+};
+
+GTFO.SpellID["1280182"] = {
+  --desc = "Ula'tek Poison Pool";
+  instance = 2963; -- The Grudge Pit
+  sound = 1;
+};
 
 --- *****************************
 --- * Magister's Terrace (2811) *
@@ -74,11 +140,13 @@ GTFO.SpellID["1214089"] = {
 --- * Voidscar Arena (2923) *
 --- *************************
 
-GTFO.SpellID["1248130"] = {
-  --desc = "Unstable Singularity (Overseer Charonus)";
+GTFO.SpellID["1234833"] = {
+  --desc = "Ravenous Swarm (Chitigoth)";
+  instance = 2923;
   sound = 1;
-  instance = 2923; 
 };
+
+-- Toxic Sludge is in GTFO_Spells_TWW.lua because it is used in multiple instances.
 
 --- ***************************
 --- * Windrunner Spire (2805) *
@@ -294,12 +362,6 @@ GTFO.SpellID["1306669"] = {
   sound = 1;
 };
 
-GTFO.SpellID["1297422"] = {
-  --desc = "Deadly Venom (Environment)";
-  instance = 2993;
-  sound = 1;
-};
-
 GTFO.SpellID["1307573"] = {
   --desc = "Triple Shot (Rav'i)";
   --instance = 2993;
@@ -402,6 +464,22 @@ GTFO.SpellID["1257654"] = {
   sound = 1;
 };
 
+GTFO.SpellID["1265425"] = {
+  --desc = "Wild Bite (Environment)";
+  instance = 2987;
+  sound = 1;
+  stackSound = 1;
+  applicationOnly = true;
+};
+
+GTFO.SpellID["1281341"] = {
+  --desc = "Wild Bite (Environment)";
+  instance = 2987;
+  sound = 1;
+  stackSound = 1;
+  applicationOnly = true;
+};
+
 --[[
 TODO: Not enough data to determine what debuff is applied to players hit by Water Jet.
 
@@ -425,31 +503,243 @@ GTFO.SpellID["1285623"] = {
   instance = 3004;
   encounter = 3470;
   sound = 1;
-  test = true; -- Verify this aura fires and does not false-alert during Mythic Immortal Coil handling
 };
 
---[[
-TODO: Spell ID not apparent through Wowhead, need to inspect the combat log after this goes live
-
-GTFO.SpellID["??????"] = {
+GTFO.SpellID["1288554"] = {
   --desc = "Latent Cultist (Latent Cultist)";
   instance = 3004;
   encounter = 3470;
   sound = 1;
 };
-]]--
 
---[[
-TODO: Spell ID not apparent through Wowhead, need to inspect the combat log after this goes live
-
-GTFO.SpellID["??????"] = {
+GTFO.SpellID["1300239"] = {
   --desc = "Swirling Spirit";
   instance = 3004;
   encounter = 3470;
   sound = 1;
   stackSound = 1;
 };
-]]--
+
+GTFO.SpellID["1284210"] = {
+  --desc = "Blood Venom (Blood of Ula'tek)";
+  instance = 3004;
+  encounter = 3445;
+  sound = 1;
+};
+
+
+
+--- *********************
+--- * Murder Row (2813) *
+--- *********************
+
+GTFO.SpellID["1253813"] = {
+  --desc = "Fel Spray (Nibbles)";
+  instance = 2813;
+  encounter = 3101;
+  sound = 1;
+};
+
+GTFO.SpellID["474234"] = {
+  --desc = "Burning Steps (Xathuux the Annihilator)";
+  instance = 2813;
+  encounter = 3103;
+  sound = 1;
+};
+
+GTFO.SpellID["1216590"] = {
+  --desc = "Heartstop Poison (Zaen's Viper)";
+  instance = 2813;
+  applicationOnly = true;
+  sound = 2;
+  stackSound = 2;
+};
+
+GTFO.SpellID["1215985"] = {
+  --desc = "Fel Beam (Defiled Golem)";
+  instance = 2813;
+  sound = 1;
+};
+
+GTFO.SpellID["1294870"] = {
+  --desc = "Fel-Scarred Earth";
+  instance = 2813;
+  sound = 1;
+};
+
+GTFO.SpellID["1215200"] = {
+  --desc = "Rain of Felfire (Corrupted Warlock)";
+  instance = 2813;
+  sound = 1;
+};
+
+GTFO.SpellID["1216955"] = {
+  --desc = "Eye Beam (Felmaster Lucsei)";
+  instance = 2813;
+  sound = 1;
+};
+
+GTFO.SpellID["1216074"] = {
+  --desc = "Spill Zone (Selenar Sunshy)";
+  instance = 2813;
+  sound = 2;
+};
+
+--- *************************
+--- * Voidscar Arena (2923) *
+--- *************************
+
+GTFO.SpellID["1249712"] = {
+	--desc = "Venomous Spit (Lost Sethrak)";
+	instance = 2923;
+	sound = 1;
+};
+
+GTFO.SpellID["1228126"] = {
+	--desc = "Macestorm (Brutal Overseer)";
+	instance = 2923;
+	sound = 1;
+};
+
+GTFO.SpellID["1299210"] = {
+	--desc = "Aftershock (Aegyra the Unyielding)";
+	instance = 2923;
+	sound = 1;
+};
+
+GTFO.SpellID["1296967"] = {
+	--desc = "Void Fissure (Taz'Rah)";
+	instance = 2923;
+	sound = 1;
+};
+
+GTFO.SpellID["1222484"] = {
+	--desc = "Poison Pool (Atroxus)";
+	instance = 2923;
+	encounter = 3286;
+	sound = 1;
+};
+
+GTFO.SpellID["1282892"] = {
+	--desc = "Sickening Bite (Toxic Creeper)";
+	instance = 2923;
+	encounter = 3286;
+	sound = 1;
+	stackSound = 3;
+};
+
+-- Note: Toxic Sludge is reused from TWW (Undermine area)
+
+GTFO.SpellID["1264188"] = {
+	--desc = "Unstable Singularity - Follower dungeon (Charonus)";
+	instance = 2923;
+	encounter = 3287;
+	sound = 1;
+	applicationOnly = true;
+};
+
+GTFO.SpellID["1248130"] = {
+	--desc = "Unstable Singularity - Other versions (Charonus)";
+	instance = 2923;
+	encounter = 3287;
+	sound = 1;
+	applicationOnly = true;
+};
+
+--- ****************************
+--- * The Blinding Vale (2859) *
+--- ****************************
+
+GTFO.SpellID["1237858"] = {
+	--desc = "Ruptured Earth (Vivid Grovekeeper)";
+	instance = 2859;
+	sound = 1;
+};
+
+GTFO.SpellID["1314885"] = {
+	--desc = "Hunting Leap (Thorny Saptor)";
+	instance = 2859;
+	sound = 1;
+};
+
+GTFO.SpellID["1234802"] = {
+	--desc = "Fertile Loam (Meittik)";
+	instance = 2859;
+	encounter = 3199;
+	sound = 1;
+};
+
+GTFO.SpellID["1235828"] = {
+	--desc = "Light-Scorched Earth (Kezkitt)";
+	instance = 2859;
+	encounter = 3199;
+	sound = 1;
+};
+
+GTFO.SpellID["1251345"] = {
+	--desc = "Blight Resin (Spineshield Beetle)";
+	instance = 2859;
+	sound = 1;
+};
+
+
+GTFO.SpellID["1246751"] = {
+	--desc = "Concentrated Lightbeam (Ziekket)";
+	instance = 2859;
+	encounter = 3202;
+	sound = 1;
+};
+
+GTFO.SpellID["1246753"] = {
+	--desc = "Lightsap (Ziekket)";
+	instance = 2859;
+	encounter = 3202;
+	sound = 1;
+};
+
+--- **************************
+--- * Den of Nalorakk (2825) *
+--- **************************
+
+GTFO.SpellID["1297701"] = {
+	--desc = "Rotten Ground (Thornclaw Gatherer)";
+	instance = 2825;
+	sound = 1;
+};
+
+GTFO.SpellID["1252825"] = {
+	--desc = "Harsh Winds";
+	instance = 2825;
+	sound = 1;
+};
+
+GTFO.SpellID["1235405"] = {
+	--desc = "Bonespiked (The Hoardmonger)";
+	instance = 2825;
+	encounter = 3207;
+	sound = 1;
+};
+
+GTFO.SpellID["1236289"] = {
+	--desc = "Blizzard's Wrath (Sentinel of Winter)";
+	instance = 2825;
+	encounter = 3208;
+	sound = 1;
+};
+
+GTFO.SpellID["1297749"] = {
+  --desc = "Frozen Tempest (Sentinel of Winter)";
+  instance = 2825;
+  encounter = 3208;
+  sound = 1;
+};
+
+GTFO.SpellID["1247367"] = {
+  --desc = "Earthquake (Loa Speaker Nanea)";
+  instance = 2825;
+  sound = 1;
+};
+
 
 end
 

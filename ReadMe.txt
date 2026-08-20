@@ -2449,3 +2449,28 @@ Change Log:
 * Added Midnight spells for Sporefall
 * Added Midnight spells for Tidebound Grotto
 * Added Midnight spells for The Venomous Abyss
+
+6.7.1
+* Updated Wrath Classic TOC to 3.80.2
+* Added Midnight spells (world)
+* Added Midnight spells for Tidebound Grotto
+
+6.7.2
+* Added Midnight spells (world)
+* Added Midnight spells (delves)
+* Added Midnight spells for Murder Row
+* Added Midnight spells for Voidscar Arena
+* Added Midnight spells for The Blinding Vale
+* Added Midnight spells for Den of Nalorakk
+* Added BFA spells for Temple of Sethraliss
+
+6.8
+* Fixed issue with addon restriction checks
+* Added Midnight spells (world)
+* Added Midnight spells for The Venomous Abyss
+* Added Midnight spells for The Blinding Vale
+* Added Midnight spells for Voidscar Arena
+* Added Midnight spells for Den of Nalorakk
+* Added Dragonflight spells for Ruby Life Pools
+* Added BFA spells for Temple of Sethraliss
+* Added BFA spells for King's Rest

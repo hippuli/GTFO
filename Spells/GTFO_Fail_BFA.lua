@@ -1109,52 +1109,75 @@ GTFO.SpellID["272469"] = {
   sound = 3;
 };
 
--- ************************
--- * Temple of Sethraliss *
--- ************************
+-- *******************************
+-- * Temple of Sethraliss (1877) *
+-- *******************************
 
 GTFO.SpellID["272657"] = {
   --desc = "Noxious Breath (Scaled Krolusk Rider)";
+  instance = 1877;
   sound = 3;
   applicationOnly = true;
 };
 
 GTFO.SpellID["273225"] = {
   --desc = "Volley (Sandswept Marksman)";
+  instance = 1877;
   sound = 3;
 };
 
 GTFO.SpellID["264206"] = {
   --desc = "Burrow (Merektha)";
+  instance = 1877;
+  encounter = 2125;
   sound = 3;
 };
 
 GTFO.SpellID["269970"] = {
   --desc = "Blinding Sand (Merektha)";
+  instance = 1877;
+  applicationOnly = true;
+  sound = 3;
+};
+
+GTFO.SpellID["264206"] = {
+  --desc = "Burrow (Merektha)";
+  instance = 1877;
+  encounter = 2125;
   applicationOnly = true;
   sound = 3;
 };
 
 GTFO.SpellID["267483"] = {
   --desc = "Loose Sparks (Loose Spark)";
+  instance = 1877;
+  sound = 3;
+};
+
+GTFO.SpellID["1225638"] = {
+  --desc = "Loose Sparks (Loose Spark)";
+  instance = 1877;
   sound = 3;
 };
 
 GTFO.SpellID["264763"] = {
   --desc = "Spark (Static-charged Dervish)";
+  instance = 1877;
   sound = 3;
 };
 
 GTFO.SpellID["272821"] = {
   --desc = "Call Lightning (Imbued Stormcaller)";
+  instance = 1877;
   sound = 3;
 };
 
 GTFO.SpellID["255741"] = {
   --desc = "Cleave (Scaled Krolusk Rider)";
+  instance = 1877;
   sound = 3;
   tankSound = 0;
-  test = true; -- Restrict to this NPC only
+  test = true; -- Restrict to this NPC only?
 };
 
 -- ********************
@@ -1346,7 +1369,13 @@ GTFO.SpellID["1312143"] = {
   instance = 1762;
   encounter = 2142;
   sound = 3;
-  test = true; -- Verify this alert
+};
+
+GTFO.SpellID["1298104"] = {
+  --desc = "Putrid Seekers (Embalming Fluid)";
+  instance = 1762;
+  applicationOnly = true;
+  sound = 3;
 };
 
 GTFO.SpellID["266206"] = {
@@ -1354,7 +1383,6 @@ GTFO.SpellID["266206"] = {
   instance = 1762;
   encounter = 2140;
   sound = 3;
-  test = true; -- Verify this alert
 };
 
 GTFO.SpellID["266191"] = {
@@ -1363,7 +1391,6 @@ GTFO.SpellID["266191"] = {
   encounter = 2140;
   applicationOnly = true;
   sound = 3;
-  test = true; -- Verify this alert
 };
 
 GTFO.SpellID["267105"] = {
@@ -1408,22 +1435,8 @@ GTFO.SpellID["1303374"] = {
   encounter = 2143;
   sound = 3;
   tankSound = 0;
-  test = true; -- Verify this damage ID fires despite its PTR Obsolete flag
 };
 
-GTFO.SpellID["270485"] = {
-  --desc = "Violent Lunge (Royal Berserker)";
-  instance = 1762;
-  sound = 3;
-  test = true; -- Avoidable by moving out of the landing zone?
-};
-
-GTFO.SpellID["1306056"] = {
-  --desc = "Erupting Slam (King Timalji)";
-  instance = 1762;
-  sound = 3;
-  test = true; -- Verify this is avoidable and the damage ID fires despite its PTR Obsolete flag
-};
 
 --[[
 TODO: Do not activate until log data shows we can distinguish the mandatory target 

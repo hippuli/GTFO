@@ -31,6 +31,7 @@ GTFO.SpellID["397110"] = {
 GTFO.SpellID["390361"] = {
   --desc = "Lightning Crash (Primalist Stormslinger)";
   sound = 3;
+  maps = { 1978, 2437 }; -- Dragon Isles, Zul'Aman
   applicationOnly = true;
 };
 
