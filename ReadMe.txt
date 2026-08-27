@@ -2474,3 +2474,15 @@ Change Log:
 * Added Dragonflight spells for Ruby Life Pools
 * Added BFA spells for Temple of Sethraliss
 * Added BFA spells for King's Rest
+
+6.8.1
+* Added Midnight spells for The Venomous Abyss
+
+6.9
+* Fixed issue with addon restriction checks being too strict
+* Added Midnight spells (world)
+
+6.9.1
+* Fixed Midnight spells for Voidscar Arena
+* Added Midnight spells (delves)
+* Added Midnight spells (prey)

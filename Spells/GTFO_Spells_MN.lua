@@ -84,6 +84,35 @@ GTFO.SpellID["1285890"] = {
   sound = 1;
 };
 
+GTFO.SpellID["1291780"] = {
+  --desc = "Venom Deluge (Malformed Leviathan)";
+  map = 2512; -- The Coiled Isle
+  sound = 1;
+};
+
+GTFO.SpellID["1292010"] = {
+  --desc = "Oozing Poison (Malformed Leviathan)";
+  map = 2512; -- The Coiled Isle
+  sound = 1;
+};
+
+GTFO.SpellID["1286785"] = {
+  --desc = "Vile Spew";
+  map = 2512; -- The Coiled Isle
+  sound = 1;
+};
+
+GTFO.SpellID["1290672"] = {
+  --desc = "Clutchspew (Vassti, the Exalted Broodmother)";
+  map = 2512; -- The Coiled Isle
+  sound = 1;
+};
+
+GTFO.SpellID["1301104"] = {
+  --desc = "Noxious Spittle (Susarikk)";
+  map = 2512; -- The Coiled Isle
+  sound = 1;
+};
 
 
 --- *******************
@@ -101,6 +130,25 @@ GTFO.SpellID["1256357"] = {
   map = 2437; -- Zul'Aman
   sound = 1;
 };
+
+GTFO.SpellID["1288086"] = {
+  --desc = "Poison Tide (Batani the Scaled)";
+  map = 2437; -- Zul'Aman
+  sound = 1;
+};
+
+GTFO.SpellID["1286720"] = {
+  --desc = "Envenomed Net";
+  maps = { 2395, 2405, 2413, 2437, 2512 }; -- Eversong Woods, Voidstorm, Harandar, Zul'Aman, The Coiled Isle
+  sound = 1;
+};
+
+GTFO.SpellID["1287232"] = {
+  --desc = "Corrosive Venom (Kursak the Coiled)";
+  map = 2512; -- The Coiled Isle
+  sound = 1;
+};
+
 
 --- *********************
 --- * Midnight (Delves) *
@@ -123,6 +171,12 @@ GTFO.SpellID["1301863"] = {
 GTFO.SpellID["1280182"] = {
   --desc = "Ula'tek Poison Pool";
   instance = 2963; -- The Grudge Pit
+  sound = 1;
+};
+
+GTFO.SpellID["1260224"] = {
+  --desc = "Domineering Energy (Wrathbound Voidwraith)";
+  instances = { 2933, 2953 }; -- Collegiate Calamity, Parhelion Plaza
   sound = 1;
 };
 
@@ -498,6 +552,12 @@ GTFO.SpellID["??????"] = {
 --- * The Venomous Abyss (3004) *
 --- *****************************
 
+GTFO.SpellID["1297338"] = {
+  --desc = "Deadly Venom";
+  instance = 3004;
+  sound = 1;
+};
+
 GTFO.SpellID["1285623"] = {
   --desc = "Soulcoil Well (Nek'zali the Soulcoiler)";
   instance = 3004;
@@ -527,7 +587,74 @@ GTFO.SpellID["1284210"] = {
   sound = 1;
 };
 
+GTFO.SpellID["1291461"] = {
+  --desc = "Virulent Fumes (Vashnik)";
+  instance = 3004;
+  sound = 1;
+};
 
+GTFO.SpellID["1310500"] = {
+  --desc = "Aftershock (First Mate Nama)";
+  instance = 3004;
+  encounter = 3497;
+  sound = 1;
+};
+
+GTFO.SpellID["1297650"] = {
+  --desc = "Spreading Flames (Trader Gebbo)";
+  instance = 3004;
+  encounter = 3497;
+  sound = 1;
+};
+
+GTFO.SpellID["1296667"] = {
+  --desc = "Caustic Residue (Sszorak)";
+  instance = 3004;
+  encounter = 3420;
+  sound = 1;
+};
+
+GTFO.SpellID["1309471"] = {
+  --desc = "Noxious Slick (The Twin Fangs)";
+  instance = 3004;
+  encounter = 3421;
+  sound = 1;
+};
+
+GTFO.SpellID["1292552"] = {
+  --desc = "Congealed Gore (The Twin Fangs)";
+  instance = 3004;
+  encounter = 3421;
+  sound = 1;
+};
+
+GTFO.SpellID["1292807"] = {
+  --desc = "Stir the Depths (The Twin Fangs)";
+  instance = 3004;
+  encounter = 3421;
+  sound = 1;
+};
+
+GTFO.SpellID["1283290"] = {
+  --desc = "Noxious Ground (Zul'jan)";
+  instance = 3004;
+  encounter = 3429;
+  sound = 1;
+};
+
+GTFO.SpellID["1298591"] = {
+  --desc = "Defiled Ground (Zul'jan)";
+  instance = 3004;
+  encounter = 3429;
+  sound = 1;
+};
+
+GTFO.SpellID["1306858"] = {
+  --desc = "Warden's Protection (Doomscale Warden)";
+  instance = 3004;
+  encounter = 3492;
+  sound = 1;
+};
 
 --- *********************
 --- * Murder Row (2813) *
@@ -630,21 +757,6 @@ GTFO.SpellID["1282892"] = {
 
 -- Note: Toxic Sludge is reused from TWW (Undermine area)
 
-GTFO.SpellID["1264188"] = {
-	--desc = "Unstable Singularity - Follower dungeon (Charonus)";
-	instance = 2923;
-	encounter = 3287;
-	sound = 1;
-	applicationOnly = true;
-};
-
-GTFO.SpellID["1248130"] = {
-	--desc = "Unstable Singularity - Other versions (Charonus)";
-	instance = 2923;
-	encounter = 3287;
-	sound = 1;
-	applicationOnly = true;
-};
 
 --- ****************************
 --- * The Blinding Vale (2859) *
